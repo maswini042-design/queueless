@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+         version="6.0">
+
+    <display-name>QueueLess — Smart Queue Prediction System</display-name>
+    <description>Enterprise Smart Queue Management &amp; Wait-Time Prediction Web Application</description>
+
+    <!-- Context Parameters -->
+    <context-param>
+        <param-name>appName</param-name>
+        <param-value>QueueLess</param-value>
+    </context-param>
+
+    <!-- Session Configuration: 30 minutes, Secure HttpOnly cookies -->
+    <session-config>
+        <session-timeout>30</session-timeout>
+        <cookie-config>
+            <name>JSESSIONID</name>
+            <http-only>true</http-only>
+            <secure>false</secure> <!-- set to true when running over HTTPS in production -->
+            <same-site>Lax</same-site>
+        </cookie-config>
+        <tracking-mode>COOKIE</tracking-mode>
+    </session-config>
+
+    <!-- Welcome file lists -->
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+
+    <!-- Error Handling: Route 404 to index.html for client-side SPA routing (excluding /api/* handled by servlets) -->
+    <error-page>
+        <error-code>404</error-code>
+        <location>/index.html</location>
+    </error-page>
+
+</web-app>

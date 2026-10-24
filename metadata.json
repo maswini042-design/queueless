@@ -1,0 +1,6 @@
+{
+  "name": "QueueLess — Smart Queue Prediction System",
+  "description": "Intelligent digital queue management and wait-time prediction system for students, staff, and administrators with Java Servlet API 6.0, MongoDB, and React.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
